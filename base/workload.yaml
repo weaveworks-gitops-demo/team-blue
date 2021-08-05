@@ -69,9 +69,9 @@ spec:
               port: http
           env:
           - name: HANDLER_PATH_PREFIX
-            value: ""
+            value: "/team-blue"
           - name: RENDER_PATH_PREFIX
-            value: ""
+            value: "/team-blue"
           - name: KUBERNETES_NAMESPACE
             valueFrom:
               fieldRef:
@@ -96,12 +96,12 @@ metadata:
   name: hello-kubernetes-ingress
   namespace: blue-ns
   annotations:
-    ingress.kubernetes.io/rewrite-target: /
+    nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
   - http:
       paths:
-        - path: /
+        - path: /team-blue
           backend:
             serviceName: hello-kubernetes-eks-ha
             servicePort: 80
