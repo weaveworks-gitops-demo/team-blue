@@ -69,7 +69,7 @@ spec:
               port: http
           env:
           - name: HANDLER_PATH_PREFIX
-            value: "/team-blue"
+            value: ""
           - name: RENDER_PATH_PREFIX
             value: "/team-blue"
           - name: KUBERNETES_NAMESPACE
