@@ -89,19 +89,3 @@ spec:
       nodeSelector:
         kubernetes.io/arch: amd64
         kubernetes.io/os: linux
----
-apiVersion: extensions/v1beta1
-kind: Ingress
-metadata:
-  name: hello-kubernetes-ingress
-  namespace: blue-ns
-  annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /
-spec:
-  rules:
-  - http:
-      paths:
-        - path: /team-blue
-          backend:
-            serviceName: hello-kubernetes-eks-ha
-            servicePort: 80
